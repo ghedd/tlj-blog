@@ -1,0 +1,81 @@
+footer {
+  font-family: sans-serif, "Open-San";
+}
+#contact {
+  background-color: $cl-theme-pr-light;
+  font-size: 0.8rem;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: 1fr auto;
+  gap: 1rem 0;
+  grid-template-areas: "email social copyr";
+  // "copyr copyr copyr copyr";
+
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "email"
+      "social"
+      "copyr";
+    gap: 1rem 0;
+    .contact,
+    .social-media {
+      justify-content: flex-start !important;
+      width: calc(10% -1.1rem);
+      padding: 0 1.1rem;
+    }
+  }
+
+  .contact,
+  .social-media,
+  .copyr {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-shrink: 1;
+    span {
+      color: $cl-txt-sc;
+      font-weight: 700;
+    }
+    ul {
+      padding: 0.4rem 0;
+    }
+    li {
+      line-height: 1.4;
+    }
+  }
+
+  .contact {
+    grid-area: email;
+  }
+  .social-media {
+    grid-area: social;
+  }
+  .copyr {
+    grid-area: copyr;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 2rem 0 4rem;
+    li {
+      display: block;
+    }
+
+    word-wrap: break-word;
+
+    li {
+      color: $cl-txt-sc;
+    }
+    @media only screen and (max-width: 800px) {
+      justify-content: center;
+      padding: 0;
+    }
+    @media only screen and (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+}

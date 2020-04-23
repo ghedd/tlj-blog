@@ -1,32 +1,48 @@
-import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import Navigation from "../components/navigation"
-import 'prismjs/themes/prism-okaidia.css';
+/**
+ * Layout component that queries for data
+ * with Gatsby's useStaticQuery component
+ *
+ * See: https://www.gatsbyjs.org/docs/use-static-query/
+ */
 
-export default ({ children }) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
+import React from "react"
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
+import "../style/main.scss"
+import Header from "./header"
+import Footer from "./footer"
+
+const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
         }
       }
-    `
-  )
+    }
+  `)
+
   return (
-    <div className="site-wrapper">
-      <header className="site-header">
-        <div className="site-title">
-          <Link to="/">{data.site.siteMetadata.title}</Link>
-        </div>
-        <Navigation />
-      </header>
-      {children}
-      <footer className="site-footer">
-        <p>&copy; 2020 Delog &bull; Crafted with <span role="img" aria-label="love">❤️</span> by <a href="https://w3layouts.com">W3Layouts</a></p>
-      </footer>
-    </div>
+    <>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <div
+        className="wrapper"
+        // style={{
+        //   margin: `0 auto`,
+        //   maxWidth: 960,
+        //   padding: `0 1.0875rem 1.45rem`,
+        // }}
+      >
+        <main className="content-wrapper">{children}</main>
+        <Footer />
+      </div>
+    </>
   )
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Layout

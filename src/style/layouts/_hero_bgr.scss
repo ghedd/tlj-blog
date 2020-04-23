@@ -1,0 +1,15 @@
+#hero-background {
+  position: relative;
+  z-index: -1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #10471c;
+    // border-radius: 0 0 15rem 0;
+    width:100%;
+    height: 15rem;
+    max-height: 50rem;
+  }
+}

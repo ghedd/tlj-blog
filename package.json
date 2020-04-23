@@ -1,41 +1,45 @@
 {
-  "name": "ghedd",
-  "description": "",
-  "author": "",
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/W3Layouts/Delog/issues"
-  },
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.19.7",
-    "gatsby-plugin-google-analytics": "^2.1.36",
-    "gatsby-plugin-netlify-cms": "^4.1.38",
-    "gatsby-plugin-react-helmet": "^3.1.22",
-    "gatsby-plugin-sass": "^2.1.28",
-    "gatsby-remark-emojis": "^0.4.2",
-    "gatsby-remark-prismjs": "^3.3.31",
-    "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-transformer-remark": "^2.6.53",
-    "netlify-cms-app": "^2.11.13",
+    "gatsby": "^2.20.12",
+    "gatsby-cli": "^2.11.15",
+    "gatsby-image": "^2.3.1",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-netlify": "^2.2.3",
+    "gatsby-plugin-netlify-cms": "4.1.33",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.2",
+    "gatsby-plugin-sass": "^2.2.3",
+    "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-plugin-typography": "^2.4.3",
+    "gatsby-remark-reading-time": "^1.1.0",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.3",
+    "gatsby-transformer-sharp": "^2.4.3",
+    "lodash": "^4.17.15",
+    "netlify-cms": "^2.10.47",
+    "netlify-cms-app": "2.10.0",
     "node-sass": "^4.13.1",
-    "prismjs": "^1.19.0",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^6.0.0",
+    "react-icons": "^3.9.0",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19",
+    "typography-theme-sutro": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "2.0.4"
   },
-  "homepage": "https://github.com/W3Layouts/Delog#readme",
   "keywords": [
-    "gatsby",
-    "netlify cms"
+    "gatsby"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ghedd/tlj-blog.git"
-  },
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -44,5 +48,12 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

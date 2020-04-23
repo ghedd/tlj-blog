@@ -1,60 +1,66 @@
 import React from "react"
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby'
+import { StaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
-import PostLink from "../components/post-link"
-import HeroHeader from "../components/heroHeader"
+import SEO from "../components/seo"
 
-const IndexPage = ({
-  data: {
-    site,
-    allMarkdownRemark: { edges },
-  },
-}) => {
+// import Post from "../components/Post"
+import PostCollection from "../components/PostCollection"
+import Headline from "../components/Headline"
 
-  const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-
-  return (
-    <Layout>
-      <Helmet>
-        <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-        {!site.siteMetadata.w3l_dom_key ? null : <meta name="w3l-domain-verification" content={site.siteMetadata.w3l_dom_key} />}
-      </Helmet>
-      <HeroHeader/>
-      <h2>Blog Posts &darr;</h2>
-      <div className="grids">
-        {Posts}
-      </div>
-    </Layout>
-  )
-}
-
-export default IndexPage
-export const pageQuery = graphql`
-  query indexPageQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        w3l_dom_key
-      }
-    }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+const topPostQuery = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      limit: 1
+    ) {
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
+            author
+            date(formatString: "MMMM DD")
             title
-            thumbnail
+          }
+          excerpt(pruneLength: 178)
+          fields {
+            slug
+            readingTime {
+              text
+            }
           }
         }
       }
     }
   }
 `
+
+const IndexPage = () => (
+  <Layout>
+    <div>
+      <SEO title="Thao Le - Julie" />
+      <StaticQuery
+        query={topPostQuery}
+        render={data => {
+          return (
+            <>
+              {data.allMarkdownRemark.edges.map(({ node }) => (
+                <Headline
+                  key={node.id}
+                  path={node.fields.slug}
+                  title={node.frontmatter.title}
+                  author={node.frontmatter.author}
+                  date={node.frontmatter.date}
+                  body={node.excerpt}
+                  readingTime={node.fields.readingTime.text}
+                />
+              ))}
+            </>
+          )
+        }}
+      />
+      <PostCollection />
+    </div>
+  </Layout>
+)
+
+export default IndexPage

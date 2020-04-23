@@ -1,0 +1,21 @@
+// utils
+@import "utils/variables";
+@import "utils/mixins";
+
+// base
+@import "base/typography.scss";
+@import "base/reset.scss";
+
+// layouts
+@import "layouts/nav_bar.scss";
+@import "layouts/content_wrapper.scss";
+@import "layouts/footer.scss";
+@import "layouts/hero_bgr.scss";
+
+// main_page
+@import "components/main_page/featured_post.scss";
+@import "components/main_page/recent_posts";
+@import "components/main_page/pre_footer_deco.scss";
+
+// article
+@import "components/article/article";

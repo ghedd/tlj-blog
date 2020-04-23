@@ -1,0 +1,31 @@
+.content-wrapper {
+  // max-width: 90%;
+  margin: 0 auto;
+  // overflow-x: hidden;
+  // padding: 0 2rem;
+
+  .section-name {
+    padding: 0 1rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0.1rem;
+      bottom: 35%;
+      right: calc(0% + 1rem);
+      min-width: 55%;
+      width: calc(98% - 10rem);
+
+      background-color: $cl-theme-pr-light;
+    }
+
+    @media only screen and (max-width: 414px) {
+      padding: 0 0.5rem !important;
+      &::after {
+        min-width: 40%;
+        width: calc(70% - 5rem);
+      }
+    }
+  }
+}
