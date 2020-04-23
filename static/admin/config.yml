@@ -1,6 +1,6 @@
 backend:
-  name: test-repo
-  brand: master
+  name: github
+  repo: https://github.com/ghedd/tlj-blog
 
 media_folder: static/assets
 public_folder: assets
