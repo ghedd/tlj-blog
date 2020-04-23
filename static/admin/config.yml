@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: https://github.com/ghedd/tlj-blog
+  repo: ghedd/tlj-blog
 
 media_folder: static/assets
 public_folder: assets
