@@ -15,4 +15,15 @@ collections:
       # - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { label: "Image", name: "image", widget: image }
       - { name: body, label: Body, widget: markdown }
+  - name: pages
+    label: Pages
+    files:
+      - file: "/src/pages/about"
+        label: About
+        name: about
+        slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
