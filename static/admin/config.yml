@@ -6,9 +6,9 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: "/src/pages/posts"
+  - label: Blog
+    name: blog
+    folder: "src/_data/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -17,14 +17,13 @@ collections:
       - { name: title, label: Title }
       - { label: "Image", name: "image", widget: image }
       - { name: body, label: Body, widget: markdown }
-  - name: pages
-    label: Pages
-    widget: list
+  - label: Pages
+    name: pages
     files:
-      - file: "/src/pages/about/index.md"
-        label: About
-        name: about
-        slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      - label: About Page
+        name: "about"
+        file: "src/_data/pages/about.md"
         fields:
+          - { label: Image, name: image, widget: image }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
