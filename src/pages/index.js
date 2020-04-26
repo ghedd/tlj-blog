@@ -9,7 +9,7 @@ import Headline from "../components/Headline"
 
 const topPostQuery = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {title: {ne: "About"}}},
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {ne: "page"}}},
       sort: { fields: frontmatter___date, order: DESC }
       limit: 1
     ) {

@@ -1,4 +1,4 @@
 ---
+templateKey: page
 title: Home
 ---
-
