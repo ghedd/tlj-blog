@@ -6,24 +6,13 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - label: Blog
-    name: blog
-    folder: "src/_data/posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      # - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { label: "Image", name: "image", widget: image }
-      - { name: body, label: Body, widget: markdown }
   - label: Pages
     name: pages
     files:
-      - label: About Page
+      - label: "About Page"
         name: "about"
-        file: "src/_data/pages/about.md"
+        file: "_data/pages/about.md"
         fields:
+          - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: Body, name: body, widget: markdown }

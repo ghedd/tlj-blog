@@ -9,7 +9,7 @@ import Headline from "../components/Headline"
 
 const topPostQuery = graphql`
   query {
-    allMarkdownRemark(
+    allMarkdownRemark(filter: {frontmatter: {title: {ne: "About"}}},
       sort: { fields: frontmatter___date, order: DESC }
       limit: 1
     ) {
@@ -38,26 +38,28 @@ const IndexPage = () => (
   <Layout>
     <div>
       <SEO title="Thao Le - Julie" />
-      <StaticQuery
-        query={topPostQuery}
-        render={data => {
-          return (
-            <>
-              {data.allMarkdownRemark.edges.map(({ node }) => (
-                <Headline
-                  key={node.id}
-                  path={node.fields.slug}
-                  title={node.frontmatter.title}
-                  author={node.frontmatter.author}
-                  date={node.frontmatter.date}
-                  body={node.excerpt}
-                  readingTime={node.fields.readingTime.text}
-                />
-              ))}
-            </>
-          )
-        }}
-      />
+      {
+        <StaticQuery
+          query={topPostQuery}
+          render={data => {
+            return (
+              <>
+                {data.allMarkdownRemark.edges.map(({ node }) => (
+                  <Headline
+                    key={node.id}
+                    path={node.fields.slug}
+                    title={node.frontmatter.title}
+                    author={node.frontmatter.author}
+                    date={node.frontmatter.date}
+                    body={node.excerpt}
+                    readingTime={node.fields.readingTime.text}
+                  />
+                ))}
+              </>
+            )
+          }}
+        />
+      }
       <PostCollection />
     </div>
   </Layout>
