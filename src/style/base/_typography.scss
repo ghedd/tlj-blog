@@ -56,6 +56,7 @@ footer {
 }
 
 .section-name,
+.featured-pgh,
 .feat-title,
 .preview-title,
 .preview-pgh,
@@ -64,7 +65,8 @@ footer {
 .feat-reading-time,
 .preview-reading-time,
 .feat-author,
-.article-heading {
+.article-heading,
+.read-more {
   font-family: "Roboto", sans-serif;
   // letter-spacing:0;
 }
@@ -74,7 +76,12 @@ footer {
   font-size: calc(0.1vw + 0.9rem);
   color: $cl-txt-pr-dark;
 }
-
+.feat-title,
+.featured-pgh,
+.preview-pgh {
+  text-justify: newspaper;
+  text-align: justify;
+}
 .featured-pgh,
 .article-body {
   color: $cl-txt-sc-dark;
@@ -114,7 +121,7 @@ footer {
 .read-more {
   background-color: $cl-theme-pr;
   border: 1px solid transparent;
-  padding: 0.1rem 0.3rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 0.15rem;
   cursor: pointer;
   font-weight: bold;

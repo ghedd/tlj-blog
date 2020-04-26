@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 const fullListQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { title: { ne: "About" } } }
+      filter: { frontmatter: { templateKey: { ne: "page" } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
