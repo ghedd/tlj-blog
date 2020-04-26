@@ -6,13 +6,40 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: "/src/pages/posts"
-    create: true
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "_data/pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Home Page"
+        name: "home"
+        file: "_data/pages/home.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - label: "Posts"
+    name: "posts"
+    folder: "_data/posts"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true
     fields:
-      # - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      # - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
+      # - { label: "Featured Image", name: "featuredimage", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      # - {label: "Tags", name: "tags", widget: "list"}

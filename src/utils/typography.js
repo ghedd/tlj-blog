@@ -15,5 +15,5 @@ const typography = new Typography(sutroTheme)
   ],
   bodyFontFamily: ["Georgia", "serif"], 
 }
- */
+*/
 export default typography
