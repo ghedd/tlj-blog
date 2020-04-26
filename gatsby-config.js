@@ -34,6 +34,7 @@ module.exports = {
         path: `${__dirname}/_data/posts`,
       },
     },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
