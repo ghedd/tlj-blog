@@ -15,6 +15,7 @@ const fullListQuery = graphql`
             author
             date(formatString: "MMMM DD")
             title
+            featuredImage 
           }
           excerpt(pruneLength: 170)
           fields {
@@ -58,6 +59,9 @@ const PostCollection = ({ childOfBlogPage }) => {
                       title={node.frontmatter.title}
                       author={node.frontmatter.author}
                       date={node.frontmatter.date}
+                      // featureImage={
+                      //   node.frontmatter.featuredImage.childImageSharp.fluid
+                      // }
                       body={node.excerpt}
                       readingTime={node.fields.readingTime.text}
                     />
