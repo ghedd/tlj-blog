@@ -1,14 +1,6 @@
 .blog-article {
   padding: 3rem 0;
-  .article-body {
-    padding: 2rem 0;
-    margin: 0 auto;
-    max-width: 68ch;
-    padding: 0 1rem;
-    p {
-      padding-top: 2rem;
-    }
-  }
+
   .article-heading {
     padding: 1rem 1rem 1.5rem 1rem;
 
@@ -35,5 +27,16 @@
       content: "";
       @include floor-fade;
     }
+  }
+}
+.article-body,
+#about-page .about-page-body {
+  text-align: justify;
+  // padding: 2rem 0;
+  margin: 0 auto;
+  max-width: 68ch;
+  padding: 0 1rem;
+  p {
+    padding-top: 2rem;
   }
 }
