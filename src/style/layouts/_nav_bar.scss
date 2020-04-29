@@ -5,7 +5,7 @@ header {
   align-items: center;
   grid-template-columns: minmax(10vw, 15vw) 1fr 1fr minmax(10vw, 15vw);
   height: auto;
-  max-height: 10rem;
+  max-height: 6rem;
   background: $cl-theme-pr;
   position: relative;
 
@@ -17,12 +17,15 @@ header {
   }
   .header-logo {
     grid-area: logo;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.4rem;
 
     a {
       text-decoration: none;
     }
     #logo {
-      max-height: 4.8rem;
+      max-height: 3.8rem;
     }
   }
   .search,
@@ -113,11 +116,12 @@ header {
 
 @media (max-width: 960px) {
   header {
-    padding: 0.8rem 1.5rem;
+    // padding: 0.8rem 1.5rem;
+    padding: 0 1.5rem;
     max-height: 5.5rem;
 
     .header-logo a #logo {
-      max-height: 3.8rem;
+      max-height: 3.5rem;
     }
     .navbar,
     .search {

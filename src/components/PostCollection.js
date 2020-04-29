@@ -16,7 +16,7 @@ const fullListQuery = graphql`
             date(formatString: "MMMM DD")
             title
           }
-          excerpt
+          excerpt(pruneLength: 170)
           fields {
             slug
             readingTime {

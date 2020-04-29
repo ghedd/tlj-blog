@@ -68,7 +68,7 @@
           padding-top: 0 !important;
           display: block;
           grid-area: pgh;
-          max-width: 72ch;
+          // max-width: 72ch;
         }
 
         .read-link {
@@ -126,9 +126,9 @@
           .preview-pgh {
             display: none;
           }
-          span {
-            display: block;
-          }
+          // span {
+          //   display: block;
+          // }
         }
         justify-content: flex-start;
       }

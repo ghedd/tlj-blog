@@ -1,7 +1,7 @@
 html,
 body {
   // font-family: "Roboto", sans-serif, "Roboto Slab", serif;
-  font-size: 18.75px;
+  font-size: 16px;
   // -webkit-font-smoothing: subpixel-antialiased;
   // transform: translate3d(-50%, -50%, 0) scale(2, 2);
   // zoom: 0.5;
@@ -41,7 +41,8 @@ footer {
 }
 
 .feat-title,
-.article-hd-title {
+.article-hd-title,
+.title {
   font-weight: 700;
   font-size: calc(1.15vw + 1.2rem);
   line-height: 1;
@@ -55,8 +56,10 @@ footer {
   }
 }
 
+footer,
 .section-name,
 .featured-pgh,
+.title,
 .feat-title,
 .preview-title,
 .preview-pgh,
@@ -83,7 +86,8 @@ footer {
   text-align: justify;
 }
 .featured-pgh,
-.article-body {
+.article-body,
+.about-page-body {
   color: $cl-txt-sc-dark;
   font-size: calc(0.2vw + 1rem);
 }
