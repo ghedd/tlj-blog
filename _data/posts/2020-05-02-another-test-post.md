@@ -6,7 +6,7 @@ featuredImage: assets/thao_profile.jpg
 ---
 \# Another test post
 
-This test is meant to check if \`featuredImage\` & in-body photo works fine. 
+This test is meant to check if `featuredImage` & in-body photo works fine. 
 
 It will be also deleted soon.
 
