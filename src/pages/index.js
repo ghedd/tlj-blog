@@ -9,7 +9,8 @@ import Headline from "../components/Headline"
 
 const topPostQuery = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {templateKey: {ne: "page"}}},
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { ne: "page" } } }
       sort: { fields: frontmatter___date, order: DESC }
       limit: 1
     ) {
@@ -20,6 +21,13 @@ const topPostQuery = graphql`
             author
             date(formatString: "MMMM DD")
             title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 2048) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           excerpt(pruneLength: 178)
           fields {
@@ -48,6 +56,9 @@ const IndexPage = () => (
                   <Headline
                     key={node.id}
                     path={node.fields.slug}
+                    featuredImage={
+                      node.frontmatter.featuredImage.childImageSharp.fluid
+                    }
                     title={node.frontmatter.title}
                     author={node.frontmatter.author}
                     date={node.frontmatter.date}

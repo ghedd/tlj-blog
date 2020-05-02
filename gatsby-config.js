@@ -6,13 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,8 +14,17 @@ module.exports = {
         path: `${__dirname}/static/assets`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -29,7 +32,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-relative-images",
             options: {
-              name: "uploads",
+              name: "assets",
             },
           },
           {
@@ -84,7 +87,7 @@ module.exports = {
         plugins: [`gatsby-remark-reading-time`],
       },
     },
-    `gatsby-plugin-sass`,
+
     {
       resolve: `gatsby-plugin-typography`,
       options: {

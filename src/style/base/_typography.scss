@@ -41,12 +41,27 @@ footer {
 }
 
 .feat-title,
-.article-hd-title,
+.hd-text-title,
 .title {
   font-weight: 700;
   font-size: calc(1.15vw + 1.2rem);
   line-height: 1;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.5rem;
+}
+
+// .hd-text-title {
+//   // text-shadow: -1px -1px 7px rgba(150, 150, 150, 1);
+// }
+.hd-text-title {
+  color: $cl-txt-pr;
+}
+.hd-text-timestmp,
+.hd-text-reading-time {
+  font-weight: 700;
+}
+
+.article-heading figcaption {
+  font-style: italic;
 }
 
 .feat-title {
@@ -89,9 +104,21 @@ footer,
 .article-body,
 .about-page-body {
   color: $cl-txt-sc-dark;
+}
+
+.featured-pgh,
+.article-body,
+.about-page-body {
   font-size: calc(0.2vw + 1rem);
 }
 
+.article-hd-text figcaption,
+.hd-text-timestmp,
+.hd-text-reading-time {
+  color: $cl-txt-sc;
+  padding-bottom: 0.4rem;
+  font-size: calc(0.02vw + 0.9rem);
+}
 .preview-pgh {
   color: $cl-txt-sc-dark;
   font-size: calc(0.02vw + 0.9rem);
@@ -160,10 +187,4 @@ footer,
   color: $cl-theme-pr-light;
   font-size: calc(0.3vw + 0.8rem);
   font-weight: 700;
-}
-
-.article-heading {
-  font-weight: 700;
-  line-height: 1;
-  color: $cl-txt-pr;
 }
