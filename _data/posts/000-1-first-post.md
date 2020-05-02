@@ -1,8 +1,9 @@
 ---
 title: Demo - Cat meoooow i iz master of hoomaan
-date: 2020-04-18T19:00:00
+date: 2020-04-18T19:00:00.000Z
 author: demo
 featuredImage: /img/home.jpg
+
 ---
 
 <!-- ![](/img/home.jpg) -->
