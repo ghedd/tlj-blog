@@ -3,7 +3,7 @@ backend:
   repo: ghedd/tlj-blog
 
 media_folder: static/assets
-public_folder: assets
+public_folder: /assets
 
 collections:
   - label: "Pages"
