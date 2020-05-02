@@ -12,7 +12,6 @@ const fullListQuery = graphql`
         node {
           id
           frontmatter {
-            author
             date(formatString: "MMMM DD")
             title
             featuredImage {
@@ -63,7 +62,6 @@ const PostCollection = ({ childOfBlogPage }) => {
                       key={node.id}
                       path={node.fields.slug}
                       title={node.frontmatter.title}
-                      author={node.frontmatter.author}
                       date={node.frontmatter.date}
                       featuredImage={
                         node.frontmatter.featuredImage.childImageSharp.fluid
