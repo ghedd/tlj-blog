@@ -15,7 +15,13 @@ const fullListQuery = graphql`
             author
             date(formatString: "MMMM DD")
             title
-            featuredImage 
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 2048, maxHeight: 1024) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           excerpt(pruneLength: 170)
           fields {
@@ -59,9 +65,9 @@ const PostCollection = ({ childOfBlogPage }) => {
                       title={node.frontmatter.title}
                       author={node.frontmatter.author}
                       date={node.frontmatter.date}
-                      // featureImage={
-                      //   node.frontmatter.featuredImage.childImageSharp.fluid
-                      // }
+                      featuredImage={
+                        node.frontmatter.featuredImage.childImageSharp.fluid
+                      }
                       body={node.excerpt}
                       readingTime={node.fields.readingTime.text}
                     />

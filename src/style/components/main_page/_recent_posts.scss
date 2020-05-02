@@ -24,19 +24,24 @@
       border-radius: 0.2rem;
       .preview-img {
         display: flex;
-        flex-grow: 1;
         justify-content: center;
         align-items: flex-start;
-        padding-right: 0.5rem;
-        padding-top: 0.4rem;
-        // width: calc(16rem - 0.2rem);
+        width: calc(14vw - 0.2rem);
+        min-width: 10rem;
+        min-height: 120px;
+        /*
+        min-height: 120px; */
+
         img {
-          min-height: 90px;
+          min-height: 120px;
           height: auto;
-          width: calc(16rem - 0.2rem);
-          min-width: 120px;
+          // width: calc(16rem - 0.2rem);
           object-fit: cover;
           object-position: center;
+        }
+        @media only screen and (max-width: 414px) {
+          width: calc(80vw - 0.9rem) !important;
+          margin-bottom: 1rem;
         }
       }
       .preview-cont {

@@ -2,41 +2,73 @@
   padding: 3rem 0;
 
   .article-heading {
-    padding: 1rem 1rem 1.5rem 1rem;
-
     min-width: 200px;
-    min-height: 520px;
-    @media only screen and (max-width: 414px) {
-      min-height: 250px;
-    }
-    background-size: cover;
-    background-position: center;
+    // max-height: 520px;
+
+    // background-size: cover;
+    // background-position: center;
     position: relative;
     // border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     z-index: 0;
-    .article-hd-title,
-    .article-hd-timestmp {
-      z-index: 10;
+    .article-hd-bgr-image {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        @include floor-fade;
+      }
     }
+    .article-hd-text {
+      padding: 0.5rem 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+
+      figcaption {
+        padding-top: 0.2rem;
+        color: $cl-txt-sc;
+      }
+    }
+    /*  .article-hd-title,
+    .article-hd-timestmp {
+     
+    } */
     // align-items: flex-end;
-    &::before {
-      // border-radius: 1rem;
-      content: "";
-      @include floor-fade;
+    @media only screen and (max-width: 960px) {
+      .article-hd-bgr-image {
+        width: 100vw;
+        margin: 0 calc(-50vw + 50%);
+      }
+    }
+    @media only screen and (max-width: 414px) {
+      height: auto;
+      .article-hd-text {
+        padding-bottom: 0.2rem;
+      }
     }
   }
-}
-.article-body,
-#about-page .about-page-body {
-  text-align: justify;
-  // padding: 2rem 0;
-  margin: 0 auto;
-  max-width: 68ch;
-  padding: 0 1rem;
-  p {
-    padding-top: 2rem;
+  .article-body,
+  #about-page .about-page-body {
+    text-align: justify;
+    // padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 68ch;
+    padding: 0 1rem;
+    p {
+      padding-top: 2rem;
+    }
   }
 }

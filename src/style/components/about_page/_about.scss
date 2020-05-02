@@ -1,5 +1,5 @@
 #about-page {
-  padding: 2rem 0;
+  padding: 3rem 0;
   position: relative;
   display: grid;
   grid-template-columns: minmax(5vw, auto) auto 1fr auto;
@@ -52,5 +52,12 @@
   }
   .about-page-body {
     grid-area: body;
+  }
+
+  @media only screen and (max-width: 960px) {
+    .about-page-hero {
+      width: 100vw;
+      margin: 0 calc(-50vw + 50%);
+    }
   }
 }
