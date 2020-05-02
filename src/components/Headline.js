@@ -9,7 +9,6 @@ const Headline = ({
   title,
   date,
   body,
-  author,
   readingTime,
 }) => {
   return (
@@ -24,7 +23,7 @@ const Headline = ({
         <div className="featured-post-content">
           <h1 className="feat-title">{title}</h1>
           <p className="featured-pgh">{body}</p>
-          <span className="feat-author">{author}</span>
+          {/* <span className="feat-author">{author}</span> */}
           <br />
           <span className="feat-timestmp">{date}</span>
           <span className="feat-reading-time">{readingTime}</span>

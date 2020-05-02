@@ -18,7 +18,6 @@ const topPostQuery = graphql`
         node {
           id
           frontmatter {
-            author
             date(formatString: "MMMM DD")
             title
             featuredImage {
@@ -60,7 +59,6 @@ const IndexPage = () => (
                       node.frontmatter.featuredImage.childImageSharp.fluid
                     }
                     title={node.frontmatter.title}
-                    author={node.frontmatter.author}
                     date={node.frontmatter.date}
                     body={node.excerpt}
                     readingTime={node.fields.readingTime.text}
