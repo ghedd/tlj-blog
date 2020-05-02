@@ -63,10 +63,10 @@
   .article-body,
   #about-page .about-page-body {
     text-align: justify;
-    // padding: 2rem 0;
+    padding: 2rem 0;
     margin: 0 auto;
     max-width: 68ch;
-    padding: 0 1rem;
+    position: relative;
     p {
       padding-top: 2rem;
     }
