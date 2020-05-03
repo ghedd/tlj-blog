@@ -10,29 +10,39 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `uploads`,
+        name: `assets`,
         path: `${__dirname}/static/assets`,
       },
     },
-    {
+    /* {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    }, */
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-posts`,
+        path: `${__dirname}/_data/posts`,
+      },
     },
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/_data/pages`,
+      },
+    },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          {
-            resolve: "gatsby-remark-relative-images",
-            options: {
-              name: "uploads",
-            },
-          },
+          "gatsby-remark-relative-images",
+          ,
           {
             resolve: "gatsby-remark-images",
             options: {
@@ -42,12 +52,13 @@ module.exports = {
               maxWidth: 2048,
             },
           },
-          {
+
+          /* {
             resolve: "gatsby-remark-copy-linked-files",
             options: {
               destinationDir: "static",
             },
-          },
+          }, */
         ],
       },
     },
@@ -63,20 +74,7 @@ module.exports = {
         icon: `src/images/tlj.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-posts`,
-        path: `${__dirname}/_data/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/_data/pages`,
-      },
-    },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
