@@ -14,13 +14,13 @@ module.exports = {
         path: `${__dirname}/static/assets`,
       },
     },
-    /* {
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
-    }, */
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -53,12 +53,12 @@ module.exports = {
             },
           },
 
-          /* {
+          {
             resolve: "gatsby-remark-copy-linked-files",
             options: {
               destinationDir: "static",
             },
-          }, */
+          },
         ],
       },
     },
